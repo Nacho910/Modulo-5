@@ -1,0 +1,49 @@
+CREATE USER 'admintienda'@'abp6' IDENTIFIED BY 'GRUPO6';
+GRANT INSERT, UPDATE , DELETE, SELECT, CREATE ON base_de_datos.* TO 'admintienda'@'abp6'
+WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+
+
+CREATE DATABASE telovendo;
+
+USE telovendo;
+
+CREATE TABLE Cliente (
+	IdCodigo int primary key not null,
+    Nombre varchar (30),
+    Apellido varchar (30),
+    Telefono int not null,
+    Direccion varchar (60),
+    Comuna varchar (30),
+    Fecha_Registro date not null
+);
+
+CREATE TABLE Producto (
+	SKU int,
+    Nombre varchar (30),
+    Categoria varchar (20),
+    Produccion varchar (30),
+    Stock int
+);
+
+CREATE TABLE Vendedor (
+	IdCodigo int primary key not null,
+	RUN int not null,
+    Nombre varchar (40),
+    Apellido varchar (40),
+    Fecha_nacimiento date,
+    Seccion varchar (20)
+);
+
+INSERT INTO Vendedor (IdCodigo, RUN, Nombre, Apellido, Fecha_nacimiento, Seccion)
+VALUES ('1', 154592341, 'Mario', 'Sepulveda', 1979-09-25, 'Zapateria');
+VALUES ('1', 154592341, 'Mario', 'Sepulveda', 1979-09-25, 'Zapateria');
+VALUES ('1', 154592341, 'Mario', 'Sepulveda', 1979-09-25, 'Zapateria');
+VALUES ('1', 154592341, 'Mario', 'Sepulveda', 1979-09-25, 'Zapateria');
+VALUES ('1', 154592341, 'Mario', 'Sepulveda', 1979-09-25, 'Zapateria');
+VALUES ('1', 154592341, 'Mario', 'Sepulveda', 1979-09-25, 'Zapateria');
+VALUES ('1', 154592341, 'Mario', 'Sepulveda', 1979-09-25, 'Zapateria');
+VALUES ('1', 154592341, 'Mario', 'Sepulveda', 1979-09-25, 'Zapateria');
+VALUES ('1', 154592341, 'Mario', 'Sepulveda', 1979-09-25, 'Zapateria');
+
+SELECT * FROM Producto;
